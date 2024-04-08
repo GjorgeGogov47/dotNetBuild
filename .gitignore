@@ -8,3 +8,7 @@
 005. Dependencies/bin
 006. Interact/obj
 006. Interact/bin
+008. Blazor/.vscode
+008. Blazor/BlazorApp/bin
+008. Blazor/BlazorApp/obj
+008. Blazor/BlazorApp/Properties
