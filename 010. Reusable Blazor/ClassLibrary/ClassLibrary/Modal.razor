@@ -1,6 +1,5 @@
-﻿@if (Show)
+﻿@if(Show)
 {
-
 	<div class="dialog-container">
 		<div class="dialog">
 			<div class="dialog-title">
@@ -12,28 +11,23 @@
 			</div>
 
 			<div class="dialog-buttons">
-				<button class="btn btn-secondary mr-auto" @onclick="OnCancel">@CancelText</button>
-				<button class="btn btn-success ml-auto" @onclick="OnConfirm">@ConfirmText</button>
+				<button class="btn btn-secondary mr-auto" @onclick="@(() => Show = false)">@CancelText</button>
+				<button class="btn btn-success ml-auto" @onclick="@(() => Show = false)">@ConfirmText</button>
 			</div>
 
 		</div>
 	</div>
-
 }
-
 @code
 {
 	[Parameter]
-	public string Title { get; set; }
+	public string? Title { get; set; }
 	[Parameter]
-	public string CancelText { get; set; }
+	public string? CancelText { get; set; }
 	[Parameter]
-	public string ConfirmText { get; set; }
+	public string? ConfirmText { get; set; }
 	[Parameter]
-	public RenderFragment ChildContent { get; set; }
+	public RenderFragment? ChildContent { get; set; }
 	[Parameter]
 	public bool Show { get; set; }
-
-	[Parameter] public EventCallback OnCancel { get; set; }
-	[Parameter] public EventCallback OnConfirm { get; set; }
 }
