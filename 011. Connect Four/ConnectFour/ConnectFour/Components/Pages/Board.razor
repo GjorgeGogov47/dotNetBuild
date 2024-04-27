@@ -23,14 +23,21 @@
 </nav>
 
 <article>
-	@winnerMessage <button style="@ResetStyle" @onclick="ResetGame">Reset the game</button>
+	@winnerMessage <button style="@ResetStyle" @onclick="() => ResetGame()">Reset the game</button>
 	<br />
 	<span class="alert-danger">@errorMessage</span>
 	<span class="alert-info">@CurrentTurn</span>
 </article>
 
 <div>
-	<div class="board"></div>
+	<div class="board">
+		@for (var i = 0; i < 42; i++)
+		{
+			<span class="container">
+				<span></span>
+			</span>
+		}
+	</div>
 	@for (var i = 0; i < 42; i++)
 	{
 		<span class="@pieces[i]"></span>
